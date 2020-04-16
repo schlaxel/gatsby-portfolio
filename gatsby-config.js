@@ -33,6 +33,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+        options: {
+          name: `images`,
+          path: `${__dirname}/static/images/uploads`,
+        },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [

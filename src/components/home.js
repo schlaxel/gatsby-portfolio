@@ -74,7 +74,7 @@ const Home = (props) => {
     setTimeout(() => { 
       setIsAnimDone(true);
     }, 500);
-  }, [setIsPage, setIsAnimDone]);
+  }, [setIsPage, setIsAnimDone, isPage, props.isPage]);
 
   return (
     <Wrapper isPage={isPage}>
