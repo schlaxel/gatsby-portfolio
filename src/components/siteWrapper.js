@@ -4,6 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import ToggleMode from '../components/toggleMode';
 import Home from '../components/home';
 import BackBtn from '../components/backBtn';
+import SEO from '../components/seo';
 
 const GlobalStyle = createGlobalStyle`
     html, body, #gatsby-focus-wrapper, #___gatsby {
@@ -43,7 +44,7 @@ const Content = styled.div`
     }
 `
 
-const SiteWrapper = ({ children, isPage }) => {
+const SiteWrapper = ({ children, isPage, seoTitle, seoDescription, seoImage, seoUrl }) => {
     const themeContext = useContext(ThemeManagerContext);
     // set Darkmode on
     useEffect(() => {
@@ -59,6 +60,9 @@ const SiteWrapper = ({ children, isPage }) => {
                 {children}
             </Content>
             { isPage &&  <BackBtn /> }
+            <SEO 
+                seoTitle={seoTitle} seoDescription={seoDescription} seoImage={seoImage} seoUrl={seoUrl}
+            />
         </Wrapper>
     )
 };

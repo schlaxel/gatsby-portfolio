@@ -3,7 +3,7 @@ import SiteWrapper from '../components/siteWrapper';
 
 const Projekte = () => {
     return (
-        <SiteWrapper isPage>
+        <SiteWrapper seoTitle="Alex Kiefer - Projekte" isPage>
         </SiteWrapper>
     );
 };

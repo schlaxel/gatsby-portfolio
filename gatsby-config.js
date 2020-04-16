@@ -6,6 +6,12 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: 'Alex Kiefer - Softwareentwickler',
+    author: 'Alex Kiefer',
+    siteUrl: `https://www.kiefer.media`,
+    description: 'Ich bin Web - und App-Entwickler aus Freiburg im Breisgau. Hier findest du einen kleinen Überblick über mich und meine Projekte.' 
+  },
   plugins: [
     'gatsby-plugin-netlify-cms',
     'gatsby-plugin-styled-components',
@@ -72,6 +78,18 @@ module.exports = {
           font: '#eeeeee',
           darker: '#141414',
         }
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Alex Kiefer - Softwareentwickler`,
+        short_name: `Alex Kiefer`,
+        start_url: `/`,
+        background_color: `#333333`,
+        theme_color: `#333333`,
+        display: `browser`,
+        icon: `src/img/icon.png`
       },
     }
   ]
