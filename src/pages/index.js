@@ -1,3 +1,9 @@
-import React from "react"
+import React from "react";
 
-export default () => <div>Hello world!</div>
+import SiteWrapper from '../components/siteWrapper';
+
+const IndexPage = () => (
+    <SiteWrapper />
+);
+
+export default IndexPage;
