@@ -4,7 +4,9 @@ import AllProjects from '../components/projects/allProjects';
 
 const Projekte = ({ location }) => {
     let wasPage = false;
-    location.state.wasPage === true ? wasPage = true : wasPage = false;
+    if (location !== undefined) {
+        location.state.wasPage === true ? wasPage = true : wasPage = false;
+    }
     return (
         <SiteWrapper seoTitle="Alex Kiefer - Projekte" isPage wasPage={wasPage}>
             <AllProjects wasPage={wasPage} />

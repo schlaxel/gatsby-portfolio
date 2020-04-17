@@ -53,7 +53,7 @@ const Content = styled.div`
     margin-top: 30px;
 `
 
-const Alex = ({ data, location }) => {
+const Alex = ({ data, props }) => {
     
     const themeContext = useContext(ThemeManagerContext);
     const [isReady, setIsReady] = useState(false);
@@ -72,7 +72,10 @@ const Alex = ({ data, location }) => {
     themeContext.isDark ? imgSVK = svkDark : imgSVK = svkLight;
 
     let wasPage = false;
-    location.state.wasPage === true ? wasPage = true : wasPage = false;
+    if (location !== undefined) {
+        location.state.wasPage === true ? wasPage = true : wasPage = false;
+    }
+    
 
     return (
         <SiteWrapper isPage wasPage={wasPage}>

@@ -31,7 +31,9 @@ const Kontakt = (props) => {
     }, [setIsReady, props.location.state.wasPage]);
 
     let wasPage = false;
-    props.location.state.wasPage === true ? wasPage = true : wasPage = false;
+    if (props.location !== undefined) {
+      props.location.state.wasPage === true ? wasPage = true : wasPage = false;
+    }
 
     return (
         <SiteWrapper isPage wasPage={wasPage}>
