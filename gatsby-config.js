@@ -47,6 +47,12 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/admin`]
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
