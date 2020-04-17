@@ -71,7 +71,6 @@ const Home = (props) => {
   const [animDone, setIsAnimDone] = useState(false);
   
   useEffect(() => {
-    console.log('wasPage', props.wasPage);
     if (props.wasPage && props.isPage) {
       setIsPage(true);
       setIsAnimDone(true);
@@ -87,7 +86,7 @@ const Home = (props) => {
   }, [setIsPage, setIsAnimDone, isPage, props.isPage, props.wasPage]);
 
   return (
-    <Wrapper wasPage={props.wasPage} isPage={isPage}>
+    <Wrapper wasPage={props.wasPage} isPage={isPage} className={props.wasPage && 'animated fadeIn slow'}>
         <Animation />
         <Name className={props.isPage ? null : 'animated fadeInDown slow'}>Alex Kiefer</Name>
         <H2 
