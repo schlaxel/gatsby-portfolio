@@ -20,6 +20,13 @@ const Content = styled.div`
 const Kontakt = (props) => {
     const [isReady, setIsReady] = useState(false);
 
+    let wasPage = false;
+    if (props.location !== undefined) {
+      if (props.location.state !== undefined) {
+        props.location.state.wasPage === true ? wasPage = true : wasPage = false;
+      }
+    }
+
     useEffect(() => {
       if (props.location.state.wasPage) {
         setIsReady(true);
@@ -28,15 +35,10 @@ const Kontakt = (props) => {
           setIsReady(true);
         }, 1500);
       }
-    }, [setIsReady, props.location.state.wasPage]);
+    }, [setIsReady, wasPage]);
 
-    let wasPage = false;
-    if (props.location !== undefined) {
-        props.location.state.wasPage === true ? wasPage = true : wasPage = false;
-    }
-    
     return (
-        <SiteWrapper isPage wasPage={props.location.state.wasPage}>
+        <SiteWrapper isPage wasPage={wasPage}>
             { isReady &&
             <div>
             <Portrait />

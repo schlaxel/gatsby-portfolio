@@ -59,7 +59,9 @@ const Alex = (props) => {
     const [isReady, setIsReady] = useState(false);
     let wasPage = false;
     if (props.location !== undefined) {
-        props.location.state.wasPage === true ? wasPage = true : wasPage = false;
+        if (props.location.state !== undefined) {
+            props.location.state.wasPage === true ? wasPage = true : wasPage = false;
+        }
     }
     useEffect(() => {
         // if the last page was a page don't animate
