@@ -72,7 +72,7 @@ const Alex = ({ data, location }) => {
     themeContext.isDark ? imgSVK = svkDark : imgSVK = svkLight;
 
     return (
-        <SiteWrapper isPage wasPage={false || location.state.wasPage}>
+        <SiteWrapper isPage wasPage={location.state.wasPage || false}>
             { isReady && 
             <InnerWrapper>
                 <Portrait />
