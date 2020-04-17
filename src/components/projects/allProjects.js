@@ -10,7 +10,10 @@ const Wrapper = styled.div`
 const AllProjects = () => {
     const data = useStaticQuery(graphql`
         query {
-            allMarkdownRemark(filter: {collection: {eq: "projects"}}) {
+            allMarkdownRemark(
+                filter: {collection: {eq: "projects"}},
+                sort: {fields: frontmatter___order}
+                ) {
                 edges {
                     node {
                         id
