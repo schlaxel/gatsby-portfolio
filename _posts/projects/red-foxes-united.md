@@ -3,7 +3,7 @@ title: Red Foxes United
 order: 3
 thumbnail: /images/uploads/rfu.jpg
 logo: /images/uploads/1578606754156_rfu.png
-website: www.rfu-freiburg.de
+website: https://www.rfu-freiburg.de
 github: https://github.com/schlaxel/redfoxes
 tags: Gatsby, Netlify CMS, React, Webseite, Design, OpenligaDB, Instagram API, Blog
 ---
