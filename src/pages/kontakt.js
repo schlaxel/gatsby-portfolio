@@ -22,7 +22,7 @@ const Kontakt = (props) => {
 
     let wasPage = false;
     if (props.location !== undefined) {
-      if (props.location.state !== undefined) {
+      if (props.location.state !== undefined && props.location.state !== null) {
         props.location.state.wasPage === true ? wasPage = true : wasPage = false;
       }
     }
