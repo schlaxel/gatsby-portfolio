@@ -21,6 +21,7 @@ const AllProjects = () => {
                             gplay
                             astore
                             website
+                            github
                             thumbnail { 
                                 childImageSharp {
                                     fluid(maxWidth: 550) {

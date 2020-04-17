@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import Tags from '../tags';
-import { GPlay, AStore, WebLink } from './linkBtns';
+import { GPlay, AStore, WebLink, GitHub } from './linkBtns';
 
 const Wrapper = styled.section`
     width: 100%;
@@ -59,8 +59,9 @@ const Project = ({ node }) => {
             <Content dangerouslySetInnerHTML={{ __html: node.html }} />
             <LinkWrapper>
                 { node.frontmatter.astore !== null && <AStore href={node.frontmatter.astore} /> }
-                { node.frontmatter.gplay !== null && <GPlay href={node.frontmatter.gPlay} /> }
+                { node.frontmatter.gplay !== null && <GPlay href={node.frontmatter.gplay} /> }
                 { node.frontmatter.website !== null && <WebLink href={node.frontmatter.website} /> }
+                { node.frontmatter.github !== null && <GitHub href={node.frontmatter.github} /> }
             </LinkWrapper>
             <TagWrapper>
                 <Tags tagString={node.frontmatter.tags} contrast noMaxWidth />

@@ -17,6 +17,7 @@ collections:
       - {label: "GPlay Link", name: "gplay", widget: "string", required: false}
       - {label: "AStore Link", name: "astore", widget: "string", required: false}
       - {label: "Website Link", name: "website", widget: "string", required: false}
+      - {label: "GitHub Link", name: "github", widget: "string", required: false}
       - {label: Tags (Comma separated), name: tags, widget: string}
       - {label: "Body", name: "body", widget: "markdown"}
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ExternalLink } from 'styled-icons/feather';
+import { ExternalLink, Github } from 'styled-icons/feather';
 import gPlay from '../../img/gplay.png';
 import aStore from '../../img/astore.png';
 
@@ -45,4 +45,10 @@ const WebLink = ({ href }) => (
   </WebWrap>
 )
 
-export { GPlay, AStore, WebLink };
+const GitHub = ({ href }) => (
+  <WebWrap href={href} target="_blank">
+    <Github size="20" /> GitHub
+  </WebWrap>
+)
+
+export { GPlay, AStore, WebLink, GitHub };
