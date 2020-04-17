@@ -30,13 +30,16 @@ const Kontakt = (props) => {
       }
     }, [setIsReady, props.location.state.wasPage]);
 
+    let wasPage = false;
+    props.location.state.wasPage === true ? wasPage = true : wasPage = false;
+
     return (
-        <SiteWrapper isPage wasPage={props.location.state.wasPage}>
+        <SiteWrapper isPage wasPage={wasPage}>
             { isReady &&
             <div>
             <Portrait />
             <SocialIcons animate />
-            <section className={`${props.location.state.wasPage ? 'delay-1s ' : 'delay-2s '}animated fadeInUp slow`}>
+            <section className={`${wasPage ? 'delay-1s ' : 'delay-2s '}animated fadeInUp slow`}>
                 <h1>Impressum</h1>
                 <Content 
                     dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} 

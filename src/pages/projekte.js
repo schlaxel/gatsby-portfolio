@@ -3,9 +3,11 @@ import SiteWrapper from '../components/siteWrapper';
 import AllProjects from '../components/projects/allProjects';
 
 const Projekte = ({ location }) => {
+    let wasPage = false;
+    location.state.wasPage === true ? wasPage = true : wasPage = false;
     return (
-        <SiteWrapper seoTitle="Alex Kiefer - Projekte" isPage wasPage={location.state.wasPage}>
-            <AllProjects wasPage={location.state.wasPage} />
+        <SiteWrapper seoTitle="Alex Kiefer - Projekte" isPage wasPage={wasPage}>
+            <AllProjects wasPage={wasPage} />
         </SiteWrapper>
     );
 };
