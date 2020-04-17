@@ -5,8 +5,7 @@ import { ThemeManagerContext } from "gatsby-styled-components-dark-mode";
 import SiteWrapper from '../components/siteWrapper';
 import SocialIcons from '../components/socialIcons';
 import Tags from '../components/tags';
-import darkImg from '../img/me_dark_sm.png';
-import lightImg from '../img/me_light_sm.png';
+import Portrait from '../components/portrait';
 import svkDark from '../img/svk_dark.png';
 import svkLight from '../img/svk_light.png';
 
@@ -64,9 +63,6 @@ const Alex = ({ data }) => {
           setIsReady(true);
         }, 1500);
       }, [setIsReady]);
-
-    let imgSrc = lightImg;
-    themeContext.isDark ? imgSrc = darkImg : imgSrc = lightImg;
     let imgSVK = svkLight;
     themeContext.isDark ? imgSVK = svkDark : imgSVK = svkLight;
 
@@ -74,7 +70,7 @@ const Alex = ({ data }) => {
         <SiteWrapper isPage>
             { isReady && 
             <InnerWrapper>
-                <Image className="fadeInDown animated slow" src={imgSrc} alt="Alexander Kiefer" />
+                <Portrait />
                 <SocialIcons animate />
                 <div className="animated fadeInUp slow delay-1s">
                 <H1>

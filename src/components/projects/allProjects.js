@@ -14,8 +14,27 @@ const AllProjects = () => {
                 edges {
                     node {
                         id
+                        html
                         frontmatter {
-                        title
+                            title
+                            tags
+                            gplay
+                            astore
+                            website
+                            thumbnail { 
+                                childImageSharp {
+                                    fluid(maxWidth: 550) {
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
+                            logo { 
+                                childImageSharp {
+                                    fluid(maxWidth: 100) {
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
                         }
                         collection
                     }

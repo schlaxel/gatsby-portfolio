@@ -14,7 +14,12 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    border: solid 2px ${props => props.theme.bgColor2};
     cursor: pointer;
+    transition: all .3s ease-in;
+    &:hover {
+        background: ${props => props.theme.bgColor2}
+    }
 `
 const Button = styled.div`
     transition: all .3s ease-in;
@@ -24,7 +29,7 @@ const Button = styled.div`
     align-items: center;
     justify-content: center;
     &:hover {
-        transform: rotate(180deg);
+        transform: rotate(180deg) scale3d(0.7,0.7,0.7);
     }
 `
 const Ico = styled(Times)`

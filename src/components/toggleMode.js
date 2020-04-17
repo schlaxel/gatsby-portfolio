@@ -12,15 +12,17 @@ const Wrapper = styled.div`
     border-radius: 25px;
     transition: all .5s ease-in;
     color: ${props => props.theme.font };
+    z-index: 99999;
     cursor: pointer;
     &:hover {
         background-color: ${props => props.theme.contrast };
-        color: ${ props => props.theme.bgColor1 } !important;
+        color: ${ props => props.theme.bgColor1 };
     }
     @media (max-width: 900px) {
         bottom: 20px;
         top: auto;
         right: auto;
+        border: solid 2px ${props => props.theme.bgColor2};
     }
 `
 
