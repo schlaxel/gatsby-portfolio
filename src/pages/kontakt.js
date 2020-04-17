@@ -32,11 +32,11 @@ const Kontakt = (props) => {
 
     let wasPage = false;
     if (props.location !== undefined) {
-      props.location.state.wasPage === true ? wasPage = true : wasPage = false;
+        props.location.state.wasPage === true ? wasPage = true : wasPage = false;
     }
-
+    
     return (
-        <SiteWrapper isPage wasPage={wasPage}>
+        <SiteWrapper isPage wasPage={props.location.state.wasPage}>
             { isReady &&
             <div>
             <Portrait />

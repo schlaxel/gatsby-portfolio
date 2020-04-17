@@ -53,28 +53,29 @@ const Content = styled.div`
     margin-top: 30px;
 `
 
-const Alex = (props, { data }) => {
+const Alex = (props) => {
     
     const themeContext = useContext(ThemeManagerContext);
     const [isReady, setIsReady] = useState(false);
+    let wasPage = false;
+    if (props.location !== undefined) {
+        props.location.state.wasPage === true ? wasPage = true : wasPage = false;
+    }
     useEffect(() => {
         // if the last page was a page don't animate
-        if(props.location.state.wasPage) {
+        if(wasPage) {
             setIsReady(true);
         } else {
             setTimeout(() => { 
               setIsReady(true);
             }, 1500);
         }
-      }, [setIsReady]);
+    }, [setIsReady]);
+    
     let imgSVK = svkLight;
     themeContext.isDark ? imgSVK = svkDark : imgSVK = svkLight;
-
-    let wasPage = false;
-    if (props.location !== undefined) {
-        props.location.state.wasPage === true ? wasPage = true : wasPage = false;
-    }
     
+    const data = props.data;
 
     return (
         <SiteWrapper isPage wasPage={wasPage}>
