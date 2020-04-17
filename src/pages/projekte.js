@@ -2,10 +2,10 @@ import React from 'react';
 import SiteWrapper from '../components/siteWrapper';
 import AllProjects from '../components/projects/allProjects';
 
-const Projekte = ({ location }) => {
+const Projekte = (props) => {
     let wasPage = false;
-    if (location !== undefined) {
-        location.state.wasPage === true ? wasPage = true : wasPage = false;
+    if (props.location !== undefined) {
+        props.location.state.wasPage === true ? wasPage = true : wasPage = false;
     }
     return (
         <SiteWrapper seoTitle="Alex Kiefer - Projekte" isPage wasPage={wasPage}>
