@@ -1,5 +1,6 @@
 ---
 title: Kieferweather
+order: 2
 thumbnail: /images/uploads/1573830401619_google_functional.jpg
 logo: /images/uploads/1573830431206_kieferweather.png
 gplay: https://play.google.com/store/apps/details?id=media.kiefer.weather
