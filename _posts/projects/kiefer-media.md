@@ -1,6 +1,6 @@
 ---
 title: Kiefer.Media
-order: 6
+order: 7
 thumbnail: /images/uploads/kiefermedia.jpg
 logo: /images/uploads/me_dark_sm-636193d49eb313e0f2b16021c414de3a.png
 website: https://www.kiefer.media
