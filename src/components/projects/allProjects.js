@@ -7,7 +7,7 @@ const Wrapper = styled.div`
 
 `
 
-const AllProjects = () => {
+const AllProjects = ({ wasPage }) => {
     const data = useStaticQuery(graphql`
         query {
             allMarkdownRemark(
@@ -48,7 +48,7 @@ const AllProjects = () => {
     `)
 
     return (
-        <Wrapper className="animated delay-1s fadeInUp slow">
+        <Wrapper className={`${!wasPage && 'delay-1s '} animated fadeInUp slow`}>
             {
                 data.allMarkdownRemark.edges.map(edge =>
                     <Project key={edge.node.id} node={edge.node} />

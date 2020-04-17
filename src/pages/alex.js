@@ -53,21 +53,25 @@ const Content = styled.div`
     margin-top: 30px;
 `
 
-const Alex = ({ data }) => {
+const Alex = ({ data, location }) => {
     
     const themeContext = useContext(ThemeManagerContext);
     const [isReady, setIsReady] = useState(false);
-
     useEffect(() => {
-        setTimeout(() => { 
-          setIsReady(true);
-        }, 1500);
+        // if the last page was a page don't animate
+        if(location.state.wasPage) {
+            setIsReady(true);
+        } else {
+            setTimeout(() => { 
+              setIsReady(true);
+            }, 1500);
+        }
       }, [setIsReady]);
     let imgSVK = svkLight;
     themeContext.isDark ? imgSVK = svkDark : imgSVK = svkLight;
 
     return (
-        <SiteWrapper isPage>
+        <SiteWrapper isPage wasPage={location.state.wasPage}>
             { isReady && 
             <InnerWrapper>
                 <Portrait />

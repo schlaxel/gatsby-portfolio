@@ -24,6 +24,9 @@ const Wrapper = styled.div`
         background: ${props.theme.bgColor1};
       }
     `}
+    ${props => props.wasPage && `
+      transition: none 0s;
+    `}
 `
 const Name = styled.h1`
     text-transform: uppercase;
@@ -68,16 +71,23 @@ const Home = (props) => {
   const [animDone, setIsAnimDone] = useState(false);
   
   useEffect(() => {
-    setTimeout(() => { 
-      setIsPage(props.isPage);
-    }, 100);
-    setTimeout(() => { 
+    console.log('wasPage', props.wasPage);
+    if (props.wasPage && props.isPage) {
+      setIsPage(true);
       setIsAnimDone(true);
-    }, 500);
-  }, [setIsPage, setIsAnimDone, isPage, props.isPage]);
+    }
+    else {
+      setTimeout(() => { 
+        setIsPage(props.isPage);
+      }, 100);
+      setTimeout(() => { 
+        setIsAnimDone(true);
+      }, 500);
+    }
+  }, [setIsPage, setIsAnimDone, isPage, props.isPage, props.wasPage]);
 
   return (
-    <Wrapper isPage={isPage}>
+    <Wrapper wasPage={props.wasPage} isPage={isPage}>
         <Animation />
         <Name className={props.isPage ? null : 'animated fadeInDown slow'}>Alex Kiefer</Name>
         <H2 

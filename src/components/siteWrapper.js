@@ -44,7 +44,7 @@ const Content = styled.div`
     }
 `
 
-const SiteWrapper = ({ children, isPage, seoTitle, seoDescription, seoImage, seoUrl }) => {
+const SiteWrapper = ({ children, isPage, wasPage, seoTitle, seoDescription, seoImage, seoUrl }) => {
     const themeContext = useContext(ThemeManagerContext);
     // set Darkmode on
     useEffect(() => {
@@ -53,7 +53,7 @@ const SiteWrapper = ({ children, isPage, seoTitle, seoDescription, seoImage, seo
     
     return (
         <Wrapper>
-            <Home isPage={isPage} />
+            <Home wasPage={wasPage} isPage={isPage} />
             <ToggleMode isPage={isPage} />
             <GlobalStyle />
             <Content>

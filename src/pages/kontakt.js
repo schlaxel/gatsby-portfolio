@@ -21,18 +21,22 @@ const Kontakt = (props) => {
     const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
-      setTimeout(() => { 
+      if (props.location.state.wasPage) {
         setIsReady(true);
-      }, 1500);
-    }, [setIsReady]);
+      } else {
+        setTimeout(() => { 
+          setIsReady(true);
+        }, 1500);
+      }
+    }, [setIsReady, props.location.state.wasPage]);
 
     return (
-        <SiteWrapper isPage>
+        <SiteWrapper isPage wasPage={props.location.state.wasPage}>
             { isReady &&
             <div>
             <Portrait />
             <SocialIcons animate />
-            <section className="animated delay-2s fadeInUp slow">
+            <section className={`${props.location.state.wasPage ? 'delay-1s ' : 'delay-2s '}animated fadeInUp slow`}>
                 <h1>Impressum</h1>
                 <Content 
                     dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} 
