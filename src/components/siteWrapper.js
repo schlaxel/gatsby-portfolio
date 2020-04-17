@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     html, body, #gatsby-focus-wrapper, #___gatsby {
         width: 100%;
         height: 100%;
-        background: radial-gradient(
+        background: ${props => props.theme.bgColor1} radial-gradient(
             ${props => props.theme.bgColor2}, ${props => props.theme.bgColor1}
         );
         background-attachment: fixed;
