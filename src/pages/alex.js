@@ -58,6 +58,7 @@ const Alex = ({ data, location }) => {
     const themeContext = useContext(ThemeManagerContext);
     const [isReady, setIsReady] = useState(false);
     useEffect(() => {
+        console.log(location.state.wasPage);
         // if the last page was a page don't animate
         if(location.state.wasPage) {
             setIsReady(true);
@@ -71,7 +72,7 @@ const Alex = ({ data, location }) => {
     themeContext.isDark ? imgSVK = svkDark : imgSVK = svkLight;
 
     return (
-        <SiteWrapper isPage wasPage={location.state.wasPage}>
+        <SiteWrapper isPage wasPage={false || location.state.wasPage}>
             { isReady && 
             <InnerWrapper>
                 <Portrait />
