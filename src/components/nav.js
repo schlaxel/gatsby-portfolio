@@ -22,32 +22,42 @@ const Elem = styled(Link)`
     justify-content: center;
     align-items: center;
     margin: 8px;
+    ${props => props.isActive && `
+        color: ${props.theme.accent};
+        box-shadow: 0 0 10px ${props.theme.darker};
+    `}
 `
 
-const Nav = ({ isPage }) => (
-    <Wrapper>
-        <Elem 
-            to="/alex"
-            state={{ wasPage: isPage }} 
-            className={isPage ? null : 'animated fadeInUp delay-04s'}
-        >
-            <User size="23" />
-        </Elem>
-        <Elem 
-            to="/projekte" 
-            state={{ wasPage: isPage }} 
-            className={isPage ? null : 'animated fadeInUp delay-06s'}
-        >
-            <Rocket size="14" />
-        </Elem>
-        <Elem 
-            to="/kontakt" 
-            state={{ wasPage: isPage }} 
-            className={isPage ? null : 'animated fadeInUp delay-08s'}
-        >
-            <Info size="14" />
-        </Elem>
-    </Wrapper>
-);
+const Nav = ({ isPage }) => {
+    let pathname = window.location.pathname;
+    return (
+        <Wrapper>
+            <Elem 
+                isActive={pathname === '/alex'}
+                to="/alex"
+                state={{ wasPage: isPage }} 
+                className={isPage ? null : 'animated fadeInUp delay-04s'}
+            >
+                <User className={pathname === '/alex' && 'animated tada infinite slow'} size="23" />
+            </Elem>
+            <Elem   
+                isActive={pathname === '/projekte'}
+                to="/projekte" 
+                state={{ wasPage: isPage }} 
+                className={isPage ? null : 'animated fadeInUp delay-06s'}
+            >
+                <Rocket className={pathname === '/projekte' && 'animated rotateOutUpRight infinite slow'} size="14" />
+            </Elem>
+            <Elem 
+                isActive={pathname === '/kontakt'}
+                to="/kontakt" 
+                state={{ wasPage: isPage }} 
+                className={isPage ? null : 'animated fadeInUp delay-08s'}
+            >
+                <Info className={pathname === '/kontakt' && 'animated jello infinite slow'} size="14" />
+            </Elem>
+        </Wrapper>
+    );
+};
 
 export default Nav;
