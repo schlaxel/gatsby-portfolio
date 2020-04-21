@@ -49,6 +49,7 @@ const SiteWrapper = ({ children, isPage, wasPage, seoTitle, seoDescription, seoI
     // set Darkmode on
     useEffect(() => {
         // Run! Like go get some data from an API.
+        themeContext.toggleDark(true);
     }, [themeContext]);
     
     return (
