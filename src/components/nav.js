@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { User } from 'styled-icons/feather';
@@ -29,7 +29,10 @@ const Elem = styled(Link)`
 `
 
 const Nav = ({ isPage }) => {
-    let pathname = window.location.pathname;
+    const [pathname, setPathname] = useState('/');
+    useEffect(() => {
+        setPathname(window.location.pathname);
+    },[setPathname]);
     return (
         <Wrapper>
             <Elem 
