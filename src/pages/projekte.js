@@ -8,6 +8,8 @@ const H1 = styled.h1`
 `
 const H2 = styled.h2`
     font-weight: 400;
+    font-size: 1.2em;
+    margin-bottom: 40px;
 `
 
 const Projekte = (props) => {
