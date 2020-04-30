@@ -72,7 +72,7 @@ const Alex = (props) => {
               setIsReady(true);
             }, 1500);
         }
-    }, [setIsReady]);
+    }, [setIsReady, wasPage]);
     
     let imgSVK = svkLight;
     themeContext.isDark ? imgSVK = svkDark : imgSVK = svkLight;

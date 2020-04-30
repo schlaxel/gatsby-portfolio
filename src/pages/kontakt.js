@@ -35,7 +35,7 @@ const Kontakt = (props) => {
           setIsReady(true);
         }, 1500);
       }
-    }, [setIsReady, wasPage]);
+    }, [setIsReady, props.location.state.wasPage]);
 
     return (
         <SiteWrapper isPage wasPage={wasPage}>
