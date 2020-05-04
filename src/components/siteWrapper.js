@@ -44,14 +44,7 @@ const Content = styled.div`
     }
 `
 
-const SiteWrapper = ({ children, isPage, wasPage, seoTitle, seoDescription, seoImage, seoUrl }) => {
-    const themeContext = useContext(ThemeManagerContext);
-    // set Darkmode on
-    useEffect(() => {
-        // Run! Like go get some data from an API.
-        themeContext.toggleDark(true);
-    }, []);
-    
+const SiteWrapper = ({ children, isPage, wasPage, seoTitle, seoDescription, seoImage, seoUrl }) => {    
     return (
         <Wrapper>
             <Home wasPage={wasPage} isPage={isPage} />
