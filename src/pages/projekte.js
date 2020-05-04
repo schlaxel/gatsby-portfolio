@@ -10,6 +10,9 @@ const H2 = styled.h2`
     font-weight: 400;
     font-size: 1.2em;
     margin-bottom: 40px;
+    max-width: 450px;
+    width: 90%;
+    margin: 0 auto 40px auto;
 `
 
 const Projekte = (props) => {
@@ -21,10 +24,10 @@ const Projekte = (props) => {
     }
     return (
         <SiteWrapper seoTitle="Alex Kiefer - Projekte" isPage wasPage={wasPage}>
-            <H1 className={ wasPage ? 'animated fadeInLeft' : 'animated fadeInLeft delay-1s' }>
+            <H1 className={ wasPage ? 'animated slow fadeInDown' : 'animated slow fadeInDown delay-1s' }>
                 Projekte
             </H1>
-            <H2 className={ wasPage ? 'animated fadeInLeft' : 'animated fadeInLeft delay-1s' }>
+            <H2 className={ wasPage ? 'animated slow fadeInDown' : 'animated slow fadeInDown delay-1s' }>
                 Hier findest du eine Auswahl an Projekten, an denen ich in letzter Zeit gearbeitet habe.
             </H2>
             <AllProjects wasPage={wasPage} />
