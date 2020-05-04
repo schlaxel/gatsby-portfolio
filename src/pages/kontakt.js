@@ -28,7 +28,7 @@ const Kontakt = (props) => {
     }
 
     useEffect(() => {
-      if (props.location.state.wasPage) {
+      if (wasPage) {
         setIsReady(true);
       } else {
         setTimeout(() => { 
