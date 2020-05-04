@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     left: 20px;
     background-color: ${props => props.theme.darker };
     padding: 10px;
-    border-radius: 25px;
+    border-radius: 30px;
     transition: all .5s ease-in;
     color: ${props => props.theme.font };
     z-index: 99999;
