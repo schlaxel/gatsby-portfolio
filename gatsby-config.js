@@ -84,8 +84,8 @@ module.exports = {
       resolve: `gatsby-styled-components-dark-mode`,
       options: {
         light: {
-          bgColor1: '#dfdede',
-          bgColor2: '#c0bfbf',
+          bgColor1: '#c0bfbf',
+          bgColor2: '#dfdede',
           contrast: '#4a4949',
           accent: '#79998b',
           font: '#222222',
