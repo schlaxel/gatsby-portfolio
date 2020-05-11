@@ -93,7 +93,7 @@ const Home = (props) => {
           animDone={animDone} 
           isPage={isPage} 
           className={props.isPage ? 'animated-mobile fadeOutUp' : 'animated fadeInLeft'}
-        >Software Entwickler</H2>
+        >Softwareentwickler</H2>
         <Nav isPage={props.isPage} />
         <BottomLine className="animated fadeInLeft delay-1s" isPage={props.isPage} />
     </Wrapper>

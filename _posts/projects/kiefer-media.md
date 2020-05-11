@@ -7,4 +7,4 @@ website: https://www.kiefer.media
 github: https://github.com/schlaxel/gatsby-portfolio
 tags: Gatsby, NetlifyCMS, React, Design
 ---
-Die Webseite wird dir bekannt vorkommen - "Websiteception". Mit Gatsby und NetlifyCMS habe ich mein ursprünglich auf React und Flamelink (Flamelink = auf firebase basierendes CMS) setzendes Portfolio auf Hochleistung getrimmt.  Den Code dazu findest du auf GitHub:
+Die Webseite wird dir bekannt vorkommen. Mit Gatsby und NetlifyCMS habe ich mein ursprünglich auf React und Flamelink (Flamelink = auf firebase basierendes CMS) basierendes Portfolio auf Hochleistung getrimmt. Den Code dazu findest du auf GitHub:
