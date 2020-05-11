@@ -1,6 +1,6 @@
 ---
 title: Inwe.it
-order: 6
+order: 3
 thumbnail: /images/uploads/inweit.jpg
 logo: /images/uploads/1578608918851_inweit_logo.jpg
 website: https://inweit.netlify.app
