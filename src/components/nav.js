@@ -11,6 +11,10 @@ const Wrapper = styled.nav`
   align-items: center;
   width: 100%;
   margin-top: 15px;
+  ${props => props.small && `
+    margin: 0;
+    width: auto;
+  `}
 `
 const Elem = styled(Link)`
     width: 45px;
@@ -28,13 +32,13 @@ const Elem = styled(Link)`
     `}
 `
 
-const Nav = ({ isPage }) => {
+const Nav = ({ isPage, small }) => {
     const [pathname, setPathname] = useState('/');
     useEffect(() => {
         setPathname(window.location.pathname);
     },[setPathname]);
     return (
-        <Wrapper>
+        <Wrapper small={small}>
             <Elem 
                 isActive={pathname === '/alex'}
                 to="/alex"

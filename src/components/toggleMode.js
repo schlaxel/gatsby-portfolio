@@ -24,12 +24,21 @@ const Wrapper = styled.div`
         right: auto;
         border: solid 2px ${props => props.theme.bgColor2};
     }
+    ${props => props.footer && `
+        top: 20px;
+        left: 20px;
+        @media (max-width: 900px) {
+            top: 20px;
+            left: 20px;
+            bottom: auto;
+        }
+    `}
 `
 
-const ToggleMode = ({ isPage }) => {
+const ToggleMode = ({ isPage, footer }) => {
     const themeContext = useContext(ThemeManagerContext);
     return (
-        <Wrapper isPage={isPage} className="animated fadeInLeft delay-1s slow">
+        <Wrapper footer={footer} isPage={isPage} className="animated fadeInLeft delay-1s slow">
             {
                 themeContext.isDark ?
                 <Sun size="30" onClick={() => themeContext.toggleDark()} /> :

@@ -76,6 +76,10 @@ module.exports = {
           {
             family: `Arvo`,
             variants: ['400', '700']
+          },
+          {
+            family: 'Source Sans Pro',
+            variants: ['400']
           }
         ],
       },
@@ -112,6 +116,13 @@ module.exports = {
         display: `browser`,
         icon: `src/img/icon.png`
       },
+    },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+          url: "https://api.covid19api.com/summary",
+          rootKey: "corona"
+      }
     }
   ]
 }
