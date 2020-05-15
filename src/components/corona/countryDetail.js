@@ -39,9 +39,15 @@ const Heading = styled.h1`
     margin-top: 100px;
 `
 
+const Error = styled.div`
+    max-width: 300px;
+    margin: auto;
+`
+
 const CountryDetail = ({ country, closeDetail }) => {
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState(undefined);
+    const [error, setError] = useState('');
     useEffect(() => {
         fetch(`https://api.covid19api.com/total/dayone/country/${country.slug}`)
         .then(res => res.json())
@@ -49,11 +55,15 @@ const CountryDetail = ({ country, closeDetail }) => {
             setData(result);
             setLoading(false);
         })
+        .catch(e => {
+            setError('Error when fetching the data. Try again.');
+        });
     }, [country]);
     return (
         <Wrapper className="animated fadeInUp slow">
             <Close onClick={() => closeDetail()}><Ico size="35" className='animated delay-2s zoomIn' /></Close>
             <Heading>{country.name}</Heading>
+            { error !== '' && <Error>{error}</Error> }
             { loading ?
                 <Loading>Loading</Loading> :
                 <Graph data={data} />
