@@ -19,6 +19,7 @@ const A = styled.a`
 
 const Global = ({ data, date }) => {
     const _date = new Date(date);
+    console.log(data, 'glibal data');
     return (
         <Wrapper>
             <H>Stand: {format(_date, 'DD.MM.YYYY hh:mm')}, Data: <A href="https://covid19api.com/">Johns Hopkins CSSE</A></H>

@@ -5,17 +5,19 @@ import { Times } from 'styled-icons/fa-solid';
 
 
 const Wrapper = styled.div`
-    top: 0; right: 0; left: 0; bottom: 0;
     background: ${props => props.theme.darker};
     height: 100%;
     width: 100%;
     position: fixed;
-    z-index: 99;
+    top: 0; right: 0; left: 0; bottom: 0;
+    z-index: 9999;
+    overflow: auto;
 `
 const Loading = styled.div`
 `
 const Close = styled.div`
     position: fixed;
+    cursor: pointer;
     transition: all .3s ease-in;
     right: 20px;
     top: 20px;

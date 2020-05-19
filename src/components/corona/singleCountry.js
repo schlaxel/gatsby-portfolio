@@ -7,6 +7,7 @@ const Wrapper = styled.tr`
     border: solid 1px #fff;
     border-collapse: collapse;
     transition: all .3s ease-in-out;
+    cursor: pointer;
     &:hover {
         background: ${props => props.theme.darker};
     }

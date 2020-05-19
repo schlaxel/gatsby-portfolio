@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import Global from './global';
 import CountryList from './countryList';
+import { Refresh } from 'styled-icons/evil/';
 
 const Wrapper = styled.div`
     padding: 20px;
@@ -13,6 +14,23 @@ const Wrapper = styled.div`
 const H = styled.h1`
     font-weight: 400;
     margin: 0;
+`
+const LoadData = styled.div`
+    margin: 10px auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: ${props => props.theme.darker};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+`
+const Error = styled.p`
+    max-width: 400px;
+    margin: auto;
+    width: 90%;
+    font-family: 'Source Sans Pro';
 `
 
 const Index = () => {
@@ -43,12 +61,35 @@ const Index = () => {
             }
         }
     `)
-    console.log(data);
+    
+    const [coronaData, setCoronaData] = useState(data);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+    console.log('static data', coronaData);
+    const loadNewData = () => {
+        setLoading(true);
+        fetch(`https://api.covid19api.com/summary`)
+        .then(res => res.json())
+        .then((result) => {
+            const corona = result;
+            setLoading(false);
+            setCoronaData({corona});
+            setError('');
+        })
+        .catch(e => {
+            setLoading(false);
+            setError(`Error when fetching the data. (${e}) This usually happens when there are too many requests to the api. 
+            Try again later, there is nothing I (Alex) can do about. Tut mir leid :(`);
+        });
+    }
+
     return (
         <Wrapper className="animated delay-1s fadeInDown" >
             <H>Coronavirus</H>
-            <Global data={data.corona.Global} date={data.corona.Date} />
-            <CountryList data={data.corona.Countries} />
+            <LoadData className={loading && 'animated infinite rotating'} onClick={() => loadNewData()}><Refresh size={30} color="#fff" /></LoadData>
+            { error !== '' && <Error>{error}</Error>}
+            <Global data={coronaData.corona.Global} date={coronaData.corona.Date} />
+            <CountryList data={coronaData.corona.Countries} />
         </Wrapper>
     )
 }

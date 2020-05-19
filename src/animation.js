@@ -466,6 +466,19 @@ const GlobalStyle = createGlobalStyle`
   animation-name: tada;
 }
 
+@keyframes rotating {
+  to {transform: rotate(360deg);}
+}
+
+@-webkit-keyframes rotating {
+  to {transform: rotate(360deg);}
+}
+
+.rotating {
+  animation-name: rotating;
+  -webkit-animation-name: rotating;
+}
+
     .animated.infinite {
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;

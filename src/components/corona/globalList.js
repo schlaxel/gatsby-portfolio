@@ -17,11 +17,12 @@ const L = styled.li`
 
 const GlobalList = ({ data }) => (
     <Wrapper>
-        <L>New Confirmed: {data.NewConfirmed}</L>
-        <L>New Deaths: {data.NewDeaths}</L>
-        <L>New Recovered: {data.TotalConfirmed}</L>
-        <L>Total Deaths: {data.TotalDeaths}</L>
-        <L>Total Recovered: {data.TotalRecovered}</L>
+        <L>Total Cases: {data.TotalConfirmed.toLocaleString()}</L>
+        <L>Total Deaths: {data.TotalDeaths.toLocaleString()}</L>
+        <L>Total Recovered: {data.TotalRecovered.toLocaleString()}</L>
+        <L>New Cases: {data.NewConfirmed.toLocaleString()}</L>
+        <L>New Deaths: {data.NewDeaths.toLocaleString()}</L>
+        <L>New Recovered: {data.NewRecovered.toLocaleString()}</L>
     </Wrapper>
 );
 

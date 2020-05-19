@@ -5,6 +5,8 @@ import CountryDetail from './countryDetail';
 
 const Wrapper = styled.div`
     margin-top: 20px;
+    height: 100%;
+    display: block;
 `
 const Table = styled.table`
     border: solid 1px ${props => props.theme.darker};
@@ -55,6 +57,10 @@ const CountryList = ({ data }) => {
 
     const showDetail = (slug, name) => {
         setShowCountryDetail({ slug, name });
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     }
     const closeDetail = () => {
         setShowCountryDetail('');

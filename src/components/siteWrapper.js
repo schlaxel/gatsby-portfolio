@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from "react";
-import { ThemeManagerContext } from "gatsby-styled-components-dark-mode";
+import React from "react";
 import styled, { createGlobalStyle } from 'styled-components';
 import ToggleMode from '../components/toggleMode';
 import Home from '../components/home';
