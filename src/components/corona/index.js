@@ -32,6 +32,9 @@ const Error = styled.p`
     width: 90%;
     font-family: 'Source Sans Pro';
 `
+const SRefresh = styled(Refresh)`
+    color: ${props => props.theme.fontColor};
+`
 
 const Index = () => {
     const data = useStaticQuery(graphql`
@@ -86,7 +89,7 @@ const Index = () => {
     return (
         <Wrapper className="animated delay-1s fadeInDown" >
             <H>Coronavirus</H>
-            <LoadData className={loading && 'animated infinite rotating'} onClick={() => loadNewData()}><Refresh size={30} color="#fff" /></LoadData>
+            <LoadData className={loading && 'animated infinite rotating'} onClick={() => loadNewData()}><SRefresh size={30} /></LoadData>
             { error !== '' && <Error>{error}</Error>}
             <Global data={coronaData.corona.Global} date={coronaData.corona.Date} />
             <CountryList data={coronaData.corona.Countries} />
