@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { ThemeManagerContext } from "gatsby-styled-components-dark-mode";
+import React from 'react';
 import styled from 'styled-components';
 import { format } from 'fecha';
 import {
@@ -13,7 +12,6 @@ const Wrapper = styled.div`
 `
 
 const Graph = ({ data }) => {
-    const theme = useContext(ThemeManagerContext);
     const formatter = (value) => {
         const date = new Date(value);
         return `${format(date, 'DD.MM.YYYY')}`;

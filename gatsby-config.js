@@ -70,19 +70,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        fonts: [
-          {
-            family: `Arvo`,
-            variants: ['400', '700']
-          },
-          {
-            family: 'Source Sans Pro',
-            variants: ['400']
-          }
-        ],
-      },
+        google: {
+          families: ['Arvo:400,700', 'Source Sans Pro:400']
+        }
+      }
     },
     {
       resolve: `gatsby-styled-components-dark-mode`,

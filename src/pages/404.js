@@ -5,17 +5,6 @@ import SocialIcons from '../components/socialIcons';
 import ErrorImg from '../img/error.jpg';
 import ArrowImg from '../img/arrow.png';
 
-const Content = styled.div`
-    margin-top: 50px;
-    font-size: 1em;
-    h2 {
-        font-size: 1.5em;
-        font-weight: 100;
-    }
-    a {
-        color: ${props => props.theme.font};
-    }
-`
 const H = styled.h1`
     font-weight: 400;
 
